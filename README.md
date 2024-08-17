@@ -1,12 +1,4 @@
-Ceci est un exemple de RAG utilisant Neo4J, Langchain, et Mistral Instruct v0.3 + LM Studio 
 
-
-Cd Neo
-docker-compose up -d
-python python pilly_parser.py
-python neo_writer.py
-cd ChatPilly
-streamlit eun Chat_Pilly.py
 
 # Projet RAG avec Neo4j, Langchain, et Mistral Instruct
 
@@ -27,7 +19,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés :
    Clonez le répertoire contenant les fichiers du projet :
 
    ```bash
-     Cd Neo
+    cd Neo
     docker-compose up -d
     python python pilly_parser.py
     python neo_writer.py
