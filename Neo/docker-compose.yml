@@ -1,0 +1,21 @@
+# version: '3.8' obsolete
+
+
+services:
+  neo4j:
+    image: neo4j:5.22  # Vous pouvez remplacer '5.11' par la version de Neo4j que vous souhaitez utiliser
+    container_name: neo4j_container
+    environment:
+      - NEO4J_AUTH=neo4j/781227pAssWord!   # utilisateur : 'neo4j', mot de passe : 'test'
+      - NEO4J_dbms_memory_pagecache_size=2G
+      - NEO4J_dbms_memory_heap_initial__size=4G
+      - NEO4J_dbms_memory_heap_max__size=4G
+      - NEO4JLABS_PLUGINS=["apoc"]
+    ports:
+      - "7474:7474"  # Port pour l'interface utilisateur
+      - "7687:7687"  # Port pour le protocole Bolt
+    volumes:
+      - ./data:/data   # Pour persister les données
+      - ./logs:/logs   # Pour persister les logs
+      - ./import:/var/lib/neo4j/import   # Pour importer des fichiers
+      - ./plugins:/plugins   # Pour ajouter des plugins
